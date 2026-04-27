@@ -28,11 +28,11 @@ export function About() {
     if (prefersReduced || !statsRef.current) return;
 
     const statElements = statsRef.current.querySelectorAll(".stat-number");
-    
+
     const ctx = gsap.context(() => {
       statElements.forEach((el) => {
         const targetValue = parseInt(el.getAttribute("data-target") || "0", 10);
-        
+
         ScrollTrigger.create({
           trigger: statsRef.current,
           start: "top 80%",
@@ -56,9 +56,9 @@ export function About() {
     <section id="about" className="py-24 relative z-10" ref={containerRef}>
       <div className="container mx-auto px-6 md:px-12">
         <SectionHeading title="About Me" />
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mt-12">
-          
+
           {/* Left: Bio */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -66,6 +66,7 @@ export function About() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="flex flex-col gap-6 text-lg text-text-secondary leading-relaxed"
           >
+
             <p>
               I&apos;m a passionate web developer from Dhaka, Bangladesh with hands-on experience in the MERN stack.
             </p>
@@ -89,8 +90,8 @@ export function About() {
             className="grid grid-cols-2 gap-6"
           >
             {STATS.map((stat, index) => (
-              <GlassCard 
-                key={index} 
+              <GlassCard
+                key={index}
                 className="flex flex-col items-center justify-center p-8 hover:-translate-y-2 hover:border-accent-primary/30 transition-all group"
               >
                 <div className="flex items-baseline gap-1 text-4xl md:text-5xl font-syne font-bold text-accent-primary mb-2 group-hover:scale-110 transition-transform">

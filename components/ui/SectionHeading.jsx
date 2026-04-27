@@ -9,7 +9,7 @@ export function SectionHeading({ title, subtitle, className }) {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <div ref={ref} className={cn("mb-12 text-center md:text-left", className)}>
+    <div ref={ref} className={cn(" flex justify-center mb-12 text-center md:text-left", className)}>
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}

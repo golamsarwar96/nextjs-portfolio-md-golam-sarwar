@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const NAV_LINKS = [
   { name: "About", href: "#about" },
@@ -51,9 +52,24 @@ export function Navbar() {
         <a
           href="#"
           onClick={(e) => handleScrollToSection(e, "#top")}
-          className="font-syne text-2xl font-bold text-accent-primary hover:text-accent-secondary transition-colors"
+          className="hover:opacity-80 transition-opacity flex items-center"
         >
-          {"<GS />"}
+          {/* Light Theme Logo (Black Logo) */}
+          <Image
+            src="/logo-black.png"
+            alt="Logo"
+            width={52}
+            height={52}
+            className="rounded-lg object-contain dark:hidden"
+          />
+          {/* Dark Theme Logo (White Logo) */}
+          <Image
+            src="/logo-white.png"
+            alt="Logo"
+            width={52}
+            height={52}
+            className="rounded-lg object-contain hidden dark:block"
+          />
         </a>
 
         {/* Desktop Nav */}

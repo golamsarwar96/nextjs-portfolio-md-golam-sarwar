@@ -14,21 +14,21 @@ if (typeof window !== "undefined") {
 const EDUCATION_DATA = [
   {
     degree: "B.Sc in Computer Science & Engineering",
-    institution: "[Your University Name]",
-    year: "2022 – Present",
-    score: "CGPA: [X.XX]",
+    institution: "Shaikh Burhanuddin Postgraduate College",
+    year: "2019 – 2024",
+    score: "CGPA: 3.67",
   },
   {
     degree: "HSC",
-    institution: "[Your College Name]",
-    year: "[Year]",
-    score: "GPA: [X.XX]",
+    institution: "Dhaka Imperial College",
+    year: "2016 – 2017",
+    score: "GPA: 5.00",
   },
   {
     degree: "SSC",
-    institution: "[Your School Name]",
-    year: "[Year]",
-    score: "GPA: [X.XX]",
+    institution: "Adarsha Academy School",
+    year: "2014 - 2015",
+    score: "GPA: 5.00",
   },
 ];
 
@@ -61,9 +61,9 @@ export function Education() {
       // Animate cards
       cardsRef.current.forEach((card, index) => {
         if (!card) return;
-        
+
         const isLeft = index % 2 !== 0;
-        
+
         gsap.fromTo(
           card,
           { opacity: 0, x: isLeft ? -50 : 50 },
@@ -93,7 +93,7 @@ export function Education() {
         <div className="relative mt-16 max-w-4xl mx-auto" ref={containerRef}>
           {/* Middle Line */}
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-white/10 -translate-x-1/2 rounded-full overflow-hidden">
-            <div 
+            <div
               ref={lineRef}
               className="w-full h-full bg-gradient-to-b from-accent to-accent-secondary origin-top"
             />
@@ -102,16 +102,15 @@ export function Education() {
           <div className="flex flex-col gap-12">
             {EDUCATION_DATA.map((item, index) => {
               const isEven = index % 2 === 0;
-              
+
               return (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   ref={(el) => { cardsRef.current[index] = el; }}
-                  className={`relative flex items-center justify-between md:justify-normal ${
-                    isEven ? "md:flex-row-reverse" : "md:flex-row"
-                  } group pl-12 md:pl-0`}
+                  className={`relative flex items-center justify-between md:justify-normal ${isEven ? "md:flex-row-reverse" : "md:flex-row"
+                    } group pl-12 md:pl-0`}
                 >
-                  
+
                   {/* Timeline Dot */}
                   <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-2 border-accent-primary z-10">
                     <div className="absolute inset-0 rounded-full bg-accent-primary animate-ping opacity-50" />
@@ -127,7 +126,7 @@ export function Education() {
                       <div className="absolute top-0 right-0 p-4 opacity-5">
                         <GraduationCap className="w-24 h-24" />
                       </div>
-                      
+
                       <div className="flex items-center gap-3 mb-4">
                         <div className="p-2 rounded-full bg-accent-primary/20 text-accent-primary">
                           <GraduationCap className="w-5 h-5" />
@@ -136,7 +135,7 @@ export function Education() {
                           {item.year}
                         </span>
                       </div>
-                      
+
                       <h3 className="font-syne text-xl md:text-2xl font-bold text-text-primary mb-2">
                         {item.degree}
                       </h3>
