@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowUp } from "lucide-react";
+import Image from "next/image";
 
 export function Footer() {
   const handleScrollToTop = () => {
@@ -18,8 +19,23 @@ export function Footer() {
     >
       <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-4">
         {/* Logo */}
-        <div className="font-syne text-2xl font-bold text-accent-primary">
-          {"<GS />"}
+        <div className="flex items-center">
+          {/* Light Theme Logo (Black Logo) */}
+          <Image
+            src="/logo-black.png"
+            alt="Logo"
+            width={40}
+            height={40}
+            className="rounded-lg object-contain dark:hidden"
+          />
+          {/* Dark Theme Logo (White Logo) */}
+          <Image
+            src="/logo-white.png"
+            alt="Logo"
+            width={40}
+            height={40}
+            className="rounded-lg object-contain hidden dark:block"
+          />
         </div>
 
         {/* Links */}

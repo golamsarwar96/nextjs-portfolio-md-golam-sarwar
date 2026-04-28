@@ -18,6 +18,9 @@ const syne = Syne({
 export const metadata = {
   title: "MD. Golam Sarwar | Full Stack Developer",
   description: "Portfolio of MD. Golam Sarwar, a web developer from Dhaka, Bangladesh with MERN stack and Next.js experience.",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({ children }) {
